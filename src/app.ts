@@ -1,6 +1,6 @@
 import { config } from "dotenv";
 config();
-import { onDbConnect } from "./knex";
+import { onDbConnect } from "./config/knex";
 
 onDbConnect()
   .then(() => {
