@@ -4,6 +4,7 @@ specifiers:
   '@types/node': ^18.15.11
   dotenv: ^16.0.3
   knex: ^2.4.2
+  nanoid: 3.1.23
   pg: ^8.10.0
   ts-node: ^10.9.1
   ts-node-dev: ^2.0.0
@@ -12,6 +13,7 @@ specifiers:
 dependencies:
   dotenv: 16.0.3
   knex: 2.4.2_pg@8.10.0
+  nanoid: 3.1.23
   pg: 8.10.0
 
 devDependencies:
@@ -371,6 +373,12 @@ packages:
 
   /ms/2.1.2:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
+    dev: false
+
+  /nanoid/3.1.23:
+    resolution: {integrity: sha512-FiB0kzdP0FFVGDKlRLEQ1BgDzU87dy5NnzjeW9YZNt+/c3+q82EQDUwniSAUxp/F0gFNI1ZhKU1FqYsMuqZVnw==}
+    engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
+    hasBin: true
     dev: false
 
   /normalize-path/3.0.0:
