@@ -1,5 +1,4 @@
 import { Knex } from "knex";
-import { nanoid } from "nanoid";
 
 export async function up(knex: Knex): Promise<void> {
   await knex.schema
@@ -7,11 +6,10 @@ export async function up(knex: Knex): Promise<void> {
       table.increments("id").primary();
       table.string("username").unique().notNullable();
       table.text("password").notNullable();
-      table.timestamp("createdAt").notNullable().defaultTo(knex.fn.now());
-      table.timestamp("updatedAt").notNullable();
+      table.timestamps(true, true, true);
     })
     .createTable("urls", (table) => {
-      table.string("id", 10).primary().defaultTo(nanoid);
+      table.string("id").primary();
       table.text("url").notNullable();
       table
         .integer("userId")
@@ -19,8 +17,7 @@ export async function up(knex: Knex): Promise<void> {
         .inTable("users")
         .onDelete("CASCADE")
         .notNullable();
-      table.timestamp("createdAt").notNullable().defaultTo(knex.fn.now());
-      table.timestamp("updatedAt").notNullable();
+      table.timestamps(true, true, true);
     })
     .createTable("visits", (table) => {
       table.increments("id").primary();
@@ -30,7 +27,7 @@ export async function up(knex: Knex): Promise<void> {
         .inTable("urls")
         .onDelete("CASCADE")
         .notNullable();
-      table.timestamps(true, true);
+      table.timestamps(true, true, true);
     });
 }
 
